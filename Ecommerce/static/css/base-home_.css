@@ -1,0 +1,506 @@
+body{
+	-webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+	margin: 0;
+	padding: 0;
+	font-family: sans-serif;
+	font-weight: bold;
+	
+}
+.header{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	background-color: #159ec7;
+	position: fixed;
+	left: 0;
+	right: 0;
+	top: 0;
+
+}
+.logo{
+	font-size: 40px;
+	text-decoration: none;
+	font-weight: bold;
+	color: white;
+	padding-left: 5%;
+}
+.logo:hover{
+	color: #c9c9c9;
+}
+.logo:active{
+	color: #979797;
+}
+.login-cart-div{
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	width: 15%;
+	margin-right: 4%;
+
+}
+.login-btn{
+	padding: 7px 12px;
+	border: none;
+	border-radius: 7px;
+	font-size: 22px;
+	font-weight: bold;
+	background-color: #02e788;
+	color: white;
+	cursor: pointer;
+    text-align: center;
+
+}
+.login-btn:hover{
+	background-color: #05d17c;
+}
+.login-btn:active{
+	background-color: #00ab64;
+}
+.logout-btn{
+	padding: 7px 12px;
+	border: none;
+	border-radius: 7px;
+	font-size: 22px;
+	font-weight: bold;
+	background-color: #02e788;
+	color: white;
+	cursor: pointer;
+	text-decoration: none;
+    text-align: center;
+
+}
+.logout-btn:hover{
+	background-color: #05d17c;
+}
+.logout-btn:active{
+	background-color: #00ab64;
+}
+.cart{
+    width: 23%;
+    text-decoration: none;
+}
+.cart_icon{
+    color: #ffffff;
+}
+.cart_icon:hover{
+    color: rgb(212, 212, 212);
+}
+.cart_icon:active{
+    color: rgb(156, 156, 156);
+}
+
+.counter{
+    border-radius: 9999px;
+    padding: 5px 5px;
+    text-align: center;
+    color: white;
+    font-size: 20px;
+    width: 50%;
+    margin-bottom: 0;
+    background-color: #979797;
+}
+.dark{
+	display: none;
+    background-color: black;
+    position: absolute;
+    top: -30vh;
+    left: 0;
+    right: 0;
+    bottom: -28.6vh;
+	z-index: 1;
+	opacity: 0.7;
+}
+.user_does_not_exist_msg{
+	margin-top: 20%;
+	position: fixed;
+	left: 22%;
+    top: -1%;
+	z-index: 3;
+	color: white;
+	font-size: 23px; 
+
+}
+.invalid_fullname{
+	margin-top: -4%;
+    margin-bottom: 11%;
+}
+.invalid_password{
+	margin-top: -4%;
+    margin-bottom: 11%;
+}
+.products_section{
+    margin-top: 20vh;
+    display: flex;
+    max-width: 95vw;
+    margin-left: 3.5%;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    margin-bottom: 5%;
+
+    
+}
+.product_div{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    box-shadow: 1px 2px 11px 0px #00000033;
+    max-width: 31%;
+    justify-content: space-between;
+    margin-right: 2%;
+    margin-top: 4%;
+}
+.product_image{
+    width: 55%;
+}
+.product_name{
+    width: 100%;
+    margin-left: 15%;
+    font-size: 18px;
+}
+.price_view_atc{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 95%;
+}
+.atc-btn{
+    border: none;
+    padding: 7px 12px;
+    font-size: 20px;
+    font-weight: bold;
+    background-color: #00abed;
+    color: white;
+    cursor: pointer;
+    border-radius: 4px;
+    margin-left: 1vw;
+
+
+}
+.atc-btn:hover{
+    background-color: #0694cc;
+}
+.atc-btn:active{
+    background-color: #047dad;
+}
+
+.form-section{
+    display: none;
+    margin-top: 17%;
+    box-shadow: 1px 2px 11px 0px #00000033;
+    max-width: 44%;
+    margin-left: auto;
+    margin-right: auto;
+    height: 72vh;
+    position: fixed;
+    top: -20%;
+    left: 0%;
+    right: 0%;
+    z-index: 10;
+    background-color: white;
+
+}
+.form{
+    display: flex;
+    flex-direction: column;
+    max-width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    height: 100%;
+}
+.form-login-btn{
+    margin-left: auto;
+    margin-right: auto;
+    padding: 8px 33px;
+    font-size: 23px;
+    font-weight: bold;
+    border: none;
+    color: white;
+    background-color: #00abed;
+    border-radius: 5px;
+    cursor: pointer;
+
+}
+.form-login-btn:hover{
+    background-color: #0096d1;
+
+}
+.form-login-btn:active{
+    background-color: #0087bd;
+
+}
+.to_sign_up{
+    margin-top: -20%;
+    text-align: center;
+}
+
+.form_heading{
+    text-align: center;
+}
+
+.fullname_label{
+    font-size: 24px;
+    margin-bottom: 1%;
+    margin-top: 5%;
+}
+
+.password_label{
+    font-size: 24px;
+    margin-bottom: 1%;
+}
+
+.form_input{
+    margin-bottom: 10%;
+    padding: 9px 12px;
+    font-size: 18px;
+}
+.reduce-z-index{
+    z-index: 2;
+}
+
+.product_price{
+    font-size: 19px;
+}
+
+
+@media(max-width: 1000px){
+    .logout-btn {
+        font-size: 25px;
+    }
+    .to_sign_up {
+        font-size: 17px;
+        margin-top: -19%;
+    }
+    .invalid_fullname{
+        font-size: 18px;
+        margin-bottom: 8%;
+        margin-top: -9%;
+    }
+    .invalid_password{
+        font-size: 18px;
+        margin-top: -9%;
+    }
+    .form-login-btn{
+        font-size: 24px;
+        margin-top: 5%;
+    }
+    .form_input {
+        font-size: 22px;
+    }
+    .fullname_label {
+        font-size: 25px;
+    }
+    .password_label {
+        font-size: 25px;
+    }
+    .products_section{
+        margin-left: 4.5%;
+    }
+
+    .products_section {
+        margin-top: 30vh;
+    }
+    .product_price {
+        font-size: 20px;
+    }
+    .price_view_atc {
+        flex-direction: column-reverse;
+        width: 100%;
+    }
+    .product_name {
+        font-size: 19px;
+    }
+    .product_div {
+        max-width: 30.5%;
+        margin-top: 5%;
+    }
+    .counter {
+        font-size: 30px;
+    }
+    .login-btn {
+        font-size: 25px;
+    }
+    .cart {
+        width: 15%;
+    }
+    .form{
+        max-width: 60%;
+        height: 97%;
+    }
+    .login-cart-div {
+        width: 40%;
+    }
+    .atc-btn {
+        font-size: 20px;
+        width: 100%;
+        margin-left: 0;
+    }
+    .product_image {
+        width: 60%; 
+    }
+    .form-section{
+        max-width: 72%;
+        height: 90vh;
+        top: -10%;
+    }
+    .form_heading {
+        font-size: 30px;
+    }
+    .logo {
+        font-size: 50px;
+    }
+
+}
+
+@media(max-width: 732px){
+    .form_input {
+        font-size: 20px;
+    }
+
+    .fullname_label {
+        font-size: 23px;
+    }
+    .password_label {
+        font-size: 23px;
+    }
+
+    .product_image {
+        width: 51%;
+    }
+    .counter {
+        font-size: 25px;
+    }
+    .to_sign_up {
+        font-size: 17px;
+    }
+    .form {
+        height: 94%;
+    }
+    .atc-btn{
+        font-size: 19px;
+    }
+    .products_section {
+        max-width: 94vw;
+    }
+    .product_name {
+        font-size: 19px;
+    }
+    .product_div{
+        max-width: 46.5%;
+        margin-right: 3%;
+        margin-bottom: 1%;
+        height: 54vh;
+    }
+    .form-section{
+        height: 85vh;
+        top: -13%;
+        max-width: 75%;
+    }
+
+    .invalid_fullname {
+        margin-bottom: 15%;
+        font-size: 17px;
+    }
+    .invalid_password {
+        font-size: 17px;
+    }
+
+}
+
+@media(max-width: 648px){
+    .products_section {
+        margin-top: 40vh;
+    }
+    .logout-btn{
+        font-size: 22px;
+        margin-bottom: 30%;
+        margin-top: 26%;
+        width: 27vw;
+        margin-right: 57%;
+
+    }
+    .form {
+        height: 94%;
+        max-width: 89%;
+    }
+    .form_heading {
+        font-size: 30px;
+    }
+    .invalid_fullname {
+        font-size: 16px;
+    }
+    .invalid_password {
+        font-size: 16px;
+    }
+    .form-login-btn {
+        font-size: 23px;
+        margin-top: 0%;
+    }
+    .form_input {
+        font-size: 20px;
+    }
+    .fullname_label {
+        font-size: 21px;
+    }
+    .password_label {
+        font-size: 21px;
+    }
+
+    .cart {
+        width: 35%;
+    }
+    .login-cart-div {
+        width: 25%;
+        display: flex;
+        flex-direction: column-reverse;
+    }
+    .product_image {
+        width: 69%;
+    }
+    .form-section {
+        max-width: 85%;
+        top: -7%;
+        height: 87%;
+    }
+    .to_sign_up {
+        width: 88%;
+        font-size: 14px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: -27%;
+    }
+    .logo {
+        font-size: 38px;
+    }
+
+    .login-btn {
+        font-size: 24px;
+        margin-bottom: 30%;
+        margin-top: 26%;
+        width: 27vw;
+        margin-right: 57%;
+
+    }
+    .price_view_atc {
+        flex-direction: column-reverse;
+        width: 100%;
+    }
+    .atc-btn{
+        width: 100%;
+        margin-left: 0;
+        font-size: 18px;
+    }
+    .product_name {
+        font-size: 20px;
+    }
+    .product_price {
+        font-size: 18px;
+    }
+    .product_div{
+        margin-top: 8%;
+        height: 55vh;
+    }
+    .dark {
+        top: -50vh;
+    }
+}

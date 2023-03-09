@@ -1,0 +1,30 @@
+{% extends 'base.html'%}
+{% load static %}
+{% block head %}
+    <link rel="stylesheet" href="{% static 'css/checkouty.css' %}">
+{% endblock head %}
+{% block title %}Checkout{% endblock title %}
+{% block content %}
+	<section class="checkout_section">
+		<div class="ordered_items">
+			<a href="{% url 'cart' %}" class="back_to_cart">Back to Cart</a>
+			{% if cart_items %}
+				<p class="order_summary">Order Summary</p>
+			{% endif %}
+			{% for cart_item in cart_items %}
+				<div class="checkout_item">
+					<img class="ordered_item_img" src="/static/{{cart_item.image.url}}" alt="{{cart_item.name}}">
+					<p class="checkout_item_info">{{cart_item.name}}</p>
+					<p class="total_item_price checkout_item_info" data-productId="{{cart_item.id}}">$<span class="total_item_price_digits" data-productId="{{cart_item.id}}">0</span></p>
+					<p class="checkout_item_info quantity">x<span data-productId="{{cart_item.id}}" class="item_quantity">0</span></p>
+				</div>
+			{% endfor %}
+			<p class="item_total_price_info">Item: <span class="number_of_items">{{count_items}}</span></p>
+			<p class="total_price item_total_price_info">Total:$<span class="total_price_digits">0</span></p>
+		</div>
+		<a href="{% url 'home' %}" class="home_btn">Home</button>
+	</section>
+	<script src="{% static 'js/jquery-3.6.3.js' %}"></script>
+	<script src="{% static 'js/checkout.js' %}"></script>
+
+{% endblock content %}

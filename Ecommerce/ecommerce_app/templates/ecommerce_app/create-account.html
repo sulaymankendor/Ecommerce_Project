@@ -1,0 +1,40 @@
+{% extends 'base.html'%}
+{% load static %}
+{% block head %}
+    <link rel="stylesheet" href="{% static 'css/create-account_.css' %}">
+{% endblock head %}
+{% block title %}Home{% endblock title %}
+{% block content %}
+	<section class="create_account_form_section">
+		{% if error_msg %}
+			<p style="text-align: center; color: red;">{{error_msg}}</p>
+		{% endif %}
+		<p class="create_an_account">Create an Account</p>
+		<div class="create_account_form_div">
+			<form method="POST" class="create-account_form">
+				{% csrf_token %}
+				<label class="labels">FullName</label>
+				<input type="text" name="full-name" placeholder="enter your fullname..." class="fullname_input inputs" size="40">
+				<p class="invalid_fullname_msg error_msg">Invalid Fullname</p>
+				<label class="labels">Email</label>
+				<input type="email" name="email" placeholder="enter you email..." class="email_input inputs" size="40">
+				<p class="invalid_email_msg error_msg">Invalid Email Address</p>
+				<label class="labels">Password</label>
+				<div style="display: flex; align-items: center; justify-content: space-between; width: 100%;">
+					<input type="password" name="password" placeholder="enter you password..." class="password_input inputs" size="40">
+					<input type="checkbox" name="checkbox" class="checkboxes checkbox1">
+				</div>
+				<p class="invalid_password_msg error_msg">Invalid Password</p>
+				<label class="labels">Confirm Password</label>
+				<div style="display: flex; align-items: center; justify-content: space-between; width: 100%;">
+					<input type="password" name="confirm-password" placeholder="re-enter your password..." class="confirm_password_input inputs" size="40">
+					<input type="checkbox" name="checkbox" class="checkboxes checkbox2">
+				</div>
+				<p class="invalid_confirm_password_msg error_msg passwords_don't_match_msg">Invalid Password</p>
+				<p class="error_msg passwords_does_not_match_msg">Passwords does not match</p>
+				<button class="create-btn">Create</button>
+			</form>
+		</div>
+	</section>
+
+{% endblock content %}

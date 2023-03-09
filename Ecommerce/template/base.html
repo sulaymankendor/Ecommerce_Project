@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/base-home_.css' %}">
+    {% block head %}{% endblock head %}
+    <title>{% block title %}{% endblock title %}</title>
+</head>
+<body style="position: relative;">
+	<div class="dark"></div>
+	<header class="header {{request.user.is_authenticated}}">
+		<a href="{% url 'home' %}" class="logo">Ecommerce</a>
+		<div class="login-cart-div">
+			<a href="{% url 'cart' %}" class="cart">
+				<p class="counter">0</p>
+				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="cart_icon w-6 h-6">
+ 			 	<path d="M2.25 2.25a.75.75 0 000 1.5h1.386c.17 0 .318.114.362.278l2.558 9.592a3.752 3.752 0 00-2.806 3.63c0 .414.336.75.75.75h15.75a.75.75 0 000-1.5H5.378A2.25 2.25 0 017.5 15h11.218a.75.75 0 00.674-.421 60.358 60.358 0 002.96-7.228.75.75 0 00-.525-.965A60.864 60.864 0 005.68 4.509l-.232-.867A1.875 1.875 0 003.636 2.25H2.25zM3.75 20.25a1.5 1.5 0 113 0 1.5 1.5 0 01-3 0zM16.5 20.25a1.5 1.5 0 113 0 1.5 1.5 0 01-3 0z" />
+				</svg>
+			</a>
+			{% if user.is_authenticated %}
+				<a href="{% url 'logout_user' %}" class="logout-btn">Log Out</a>
+			{% else %}
+				<button class="login-btn">Login</button>
+			{% endif%}
+		</div>
+	</header>
+	<main>
+		<section class="form-section">
+			<h1 class="form_heading">Login User</h1>
+			<form method="POST" class="form">
+				{% csrf_token %}
+				<labe class="fullname_label">FullName</labe>
+				<input type="text" placeholder="enter your fullname..." name="full-name" class="form_input full-name">
+				<p class="invalid_fullname" style="display: none; color: red;">Invalid Fullname</p>
+				<label class="password_label">Password</label>
+				<input type="password" placeholder="enter your password..." name="password" class="form_input password">
+				<p class="invalid_password" style="display: none; color: red;">Invalid Password</p>
+				<button class="form-login-btn">Login</button>
+			</form>
+			<p class="to_sign_up">If you don't have an account, <a href="{% url 'create-account' %}">Click Here</a> to SignUp</p>
+		</section>
+		<p class="user_does_not_exist_msg" style="display: none;">This account does not exist <a href="{% url 'create-account' %}" style="color: #00ffff;">Click Here</a> to create an account</p>
+		{% block content %}{% endblock content %}
+	</main>	
+	<script src="{% static 'js/jquery-3.6.3.js' %}"></script>
+	<script src="{% static 'js/ecommerce-1.js' %}"></script>
+	<script src="{% static 'js/ecommerce-2.js' %}"></script>
+
+</body>
+</html>

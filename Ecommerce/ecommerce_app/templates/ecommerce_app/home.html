@@ -1,0 +1,19 @@
+{% extends 'base.html'%}
+{% load static %}
+{% block title %}Home{% endblock title %}
+{% block content %}
+	<section class="products_section reduce-z-index">
+		{% for product in products %}
+			<div class="product_div">
+				<img class="product_image" src="/static/{{product.image.url}}" alt="{{product.name}}">
+				<p class="product_name">{{product.name}}</p>
+				<div class="price_view_atc">
+					<button class="atc-btn" data-productID="{{product.id}}" data-productName="{{product.name}}">Add to Cart</button>
+					<p data-productName="{{product.name}}" style="display: none; font-size: 19px; font-weight: bold; color: #3400ff;" class="added_to_cart">Added to Cart</p>
+					<p class="product_price">${{product.price}}</p>
+				</div>
+			</div>
+		
+		{% endfor %}
+	</section>
+{% endblock content %}

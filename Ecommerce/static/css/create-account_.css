@@ -1,0 +1,131 @@
+.create_account_form_section{
+	margin-top: 9%;
+
+}
+.create-account_form{
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+    width: 29vw;
+
+}
+.create_account_form_div{
+    max-width: 33%;
+    margin-left: auto;
+    margin-right: auto;
+}
+.inputs{
+    padding: 10px 0;
+    padding-right: 15px;
+    padding-left: 15px;
+    font-size: 18px;
+    margin-bottom: 7%;
+}
+.labels{
+	font-size: 21px;
+}
+.create-btn{
+    border: none;
+    width: 50%;
+    background-color: #00abed;
+    cursor: pointer;
+    font-weight: bold;
+    color: white;
+    font-size: 21px;
+    padding: 10px 0;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 4px;
+    margin-top: 5%;
+    margin-bottom: 7%;
+
+}
+.create-btn:hover{
+    background-color: #0096d1;
+
+}
+.create-btn:active{
+    background-color: #0087bd;
+
+}
+
+.create_an_account{
+	text-align: center;
+	font-size: 29px;
+}
+.checkboxes{
+	margin-top: -4%;
+	cursor: pointer;
+    margin-left: 10%;
+
+
+}
+.error_msg{
+    color: red;
+    margin-top: -5%;
+    margin-bottom: 6%;
+    display: none;
+}
+
+@media(max-width: 1000px){
+    .create-account_form{
+        width: 43vw;
+        margin-left: -10%;
+    }
+    .create_account_form_section{
+        margin-top: 30vh;
+        margin-bottom: 10vh;
+    }
+    .create-btn{
+        margin-top: 5%;
+    }
+    .inputs {
+        margin-bottom: 8%;
+
+    }
+    .error_msg {
+        margin-top: -6%;
+        margin-bottom: 13%;
+    }
+
+}
+@media(max-width: 800px){
+    .create_account_form_div {
+       max-width: 45%;
+    }
+
+}
+@media(max-width: 648px){
+    .labels {
+        width: 135%;
+        margin-left: -9%;
+    }
+    .error_msg {
+        margin-top: -11%;
+        margin-bottom: 13%;
+        width: 120%;
+    }
+    .create-btn {
+        margin-top: 7%;
+        width: 65%;
+        font-size: 22px;
+        margin-left: 40%;
+    }
+    .create_account_form_section {
+        margin-top: 43vh;
+    }
+    .create_an_account {
+        margin-bottom: 11%;
+    }
+    .create-account_form {
+        margin-left: -17vw;
+    }
+    .inputs {
+        margin-bottom: 15%;
+        margin-left: -9%;
+    }
+    .checkboxes {
+        margin-left: 7%;
+    }
+
+}

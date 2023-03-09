@@ -1,0 +1,61 @@
+{% extends 'base.html'%}
+{% load static %}
+{% block head %}
+    <link rel="stylesheet" href="{% static 'css/ecommerce-cart1.css' %}">
+{% endblock head %}
+{% block title %}Cart{% endblock title %}
+{% block content %}
+	<section class="cart_section">
+		<div class="cart_div1">
+			<div>
+				<a href="{% url 'home' %}" class="continue_shopping">Continue Shopping</a>
+			</div>
+			<div class="cart_div2">
+				<div class="items_total_div">
+					<p class="items-total items">Items: {{items}}</p>
+					<p class="items-total">Total: $<span class="items_total_digits"></span></p>
+				</div>
+				<div class="checkout_div">
+					{% if cart_items %}
+						<button class="checkout">Checkout</button>
+					{% endif%}
+				</div>
+			</div>
+		</div>
+		{% if cart_items %}
+			<div class="items_div">
+				{% for cart_item in cart_items %}
+					<div class="item_div">
+						<img class="cart_item_img" src="/static/{{cart_item.image.url}}" alt="{{cart_item.name}}">
+						<p class="product_info_titles cart_item_name">{{cart_item.name}}</p>
+						<p class="product_info_titles item_price">$<span class="cart_item_price" data-productId={{cart_item.id}}>{{cart_item.price}}</span></p>
+						<div class="up_down_btn">
+							<button class="up_btn" data-productId={{cart_item.id}}>
+								<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6 up_arrow">
+			  					<path fill-rule="evenodd" d="M11.47 7.72a.75.75 0 011.06 0l7.5 7.5a.75.75 0 11-1.06 1.06L12 9.31l-6.97 6.97a.75.75 0 01-1.06-1.06l7.5-7.5z" clip-rule="evenodd" />
+								</svg>
+							</button>
+							<p class="quantity_counter" data-productId={{cart_item.id}}>1</p>
+							<button class="down_btn" data-productId={{cart_item.id}}>
+								<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6 down_arrow">
+			 					 <path fill-rule="evenodd" d="M12.53 16.28a.75.75 0 01-1.06 0l-7.5-7.5a.75.75 0 011.06-1.06L12 14.69l6.97-6.97a.75.75 0 111.06 1.06l-7.5 7.5z" clip-rule="evenodd" />
+								</svg>
+							</button>
+						</div>
+						<p class="product_info_titles" style="width: 8%;">$<span class="item_total_price" data-productId={{cart_item.id}} data-productName={{cart_item.name}}>{{cart_item.price}}</span></p>
+						<form method="POST">
+							{% csrf_token %}
+							<button class="delete_cart_item" name="delete_item" value="{{cart_item.id}}">Delete</button>
+							
+						</form>
+					</div>
+				{% endfor %}
+			
+			</div>
+		{% else %}
+			<p class="no_cart_item">No Item in the Cart</p>	
+		{% endif%}
+	</section>
+
+{% endblock content %}
+
